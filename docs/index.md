@@ -1,17 +1,19 @@
-# Welcome to MkDocs
+# Welcome to Easy Meets!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to EasyMeets! This is the github pages implementation of our documentation for easy-meets,
+This readme explains several aspects of the code base for easy-meets, and makes it easier for 
+new developers to get started with the project.
 
-## Commands
+## Code Annotation Examples
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+### Class Annotation
+:smile:
 
-## Project layout
+```javascript title="src/Class.js"
+const a = 1;
+const b = 2;
+const c = a + b;
+```
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+[Link to MkDocs Docs](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/)

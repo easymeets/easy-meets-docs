@@ -12,4 +12,27 @@ theme:
     - content.code.annotation
     - content.code.copy
   language: en
-  
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.snippets
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/easymeets
+
+copyright: |
+  &copy; 2023 Easy Meets App
