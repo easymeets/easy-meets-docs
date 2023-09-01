@@ -37,3 +37,7 @@ extra:
 
 copyright: |
   &copy; 2023 Easy Meets App
+
+nav:
+  - Home: index.md
+  - Files and Styles: filestructure.md
