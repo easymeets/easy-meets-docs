@@ -28,7 +28,7 @@ new developers to get started with the project.
 ### Installation
 
 !!! info
-    If you have any trouble setting up the project, send an email to easymeetsnyc@gmail.com and we can help you out!
+    If you have any trouble setting up the project, send an email to easymeetsnyc@gmail.com and we can help you out! 
 
 - Clone the project repository from the source control system (e.g. GitHub) to the new machine. You can do this by running the following command in the terminal:
 
@@ -37,6 +37,10 @@ new developers to get started with the project.
    ```
 
    Replace `<repository-url>` with the URL of the repository.
+
+!!! note
+      It is recommended to use SSH to clone the repository. You can find the SSH URL by clicking on the green "Code" button on the repository page.
+      Please refer to this gist for assistance with setting up SSH keys: [SSH GIST](https://gist.github.com/cybersamx/1ad243b47cb0ac6734d2)
 
 - Navigate to the project directory by running the following command in the terminal:
 
