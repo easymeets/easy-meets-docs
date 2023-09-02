@@ -65,3 +65,9 @@ We use the following naming conventions and style to make it easier for develope
     
 !!! danger
     Do not use inline styling or other libraries. This will make it harder for other developers to read your code.
+
+
+### Links
+
+- [React Native Paper](https://callstack.github.io/react-native-paper/)
+- [Figma](https://www.figma.com/file/k9AhUzLgY0px7BrlQIveL8/Easy-Meets?type=design&node-id=0%3A1&mode=design&t=5865oJhuzAITqhWr-1).
