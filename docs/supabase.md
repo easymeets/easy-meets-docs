@@ -61,41 +61,64 @@ return (
 );
 ```
 
-You can now use the `getCurrentUser` function in your components in the same way as the other functions:
+In SubabaseContext.js, you need to add the `getCurrentUser` function to the `SupabaseContext` object:
+
+```javascript title="SupabaseContext.js" linenums="1"
+// In SupabaseContext.js
+
+import { createContext } from 'react';
+
+const SupabaseContext = createContext({
+  isLoggedIn: false,
+  login: async () => {},
+  register: async () => {},
+  forgotPassword: async () => {},
+  logout: async () => {},
+  getCurrentUser: async () => {}, // Add getCurrentUser to the SupabaseContext object
+});
+
+export default SupabaseContext;
+```
+
+
+You can now use the `getCurrentUser` function in your components in the same way as the other functions
+using the `use Supabase` hook:
 
 ```javascript title="YourComponent.js"
-import React, { useContext, useEffect } from 'react';
-import SupabaseContext from './SupabaseContext';
+import React, { useContext } from 'react';
+import useSupabase from './lib/hooks/useSupabase'; // This route is not correct, but you get the idea
 
 function YourComponent() {
-  const { getCurrentUser } = useContext(SupabaseContext);
+  const { getCurrentUser } = useSupabase();
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const user = await getCurrentUser();
-      console.log(user);
-    };
+  // You can now use getCurrentUser in your component
 
-    fetchUser();
-  }, []);
+  getCurrentUser().then((user) => console.log(user));
 
   return <div>Your component</div>;
 }
-
-export default YourComponent;
 ```
 
 In this example, `YourComponent` calls the `getCurrentUser` function when it mounts and logs the current user to the console.
 
+!!! question
+    Why is using a hook better than using the context object directly?
+
+    !!! answer
+        Using a hook is better because it allows you to use the function in a functional component. If you use the context object directly, you can only use the function in a class component. Also, using a hook is easier to read and understand. It is also easier to test. useSupabase has clearer semantics than useContext(SupabaseContext). (useSupabase is a custom hook that uses the useContext hook under the hood)
+
 ## Supabase Functions
 
-How can i find out more about Supabase functions?
+!!! question
+    How can i find out more about Supabase functions?
+    !!! answer
+        You can find out more about Supabase functions by reading the documentation. Here are some links to the documentation:
+    - [Supabase Auth](https://supabase.io/docs/reference/javascript/auth-signup)
+    - [Supabase Database](https://supabase.com/docs/reference/javascript/select)
+    - [Supabase Storage](https://supabase.com/docs/reference/javascript/storage-createbucket)
+    - [Supabase Realtime](https://supabase.com/docs/reference/javascript/subscribe)
 
 !!! info
     Please use version 2.0.0 of the Supabase client. Version 1.0.0 is deprecated and we are not using it.
 
-- [Supabase Auth](https://supabase.io/docs/reference/javascript/auth-signup)
-- [Supabase Database](https://supabase.com/docs/reference/javascript/select)
-- [Supabase Storage](https://supabase.com/docs/reference/javascript/storage-createbucket)
-- [Supabase Realtime](https://supabase.com/docs/reference/javascript/subscribe)
 
