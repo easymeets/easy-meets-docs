@@ -44,3 +44,4 @@ nav:
   - Supabase: supabase.md
   - Components: components.md
   - Screens: screens.md
+  - Google API: googleapi.md
