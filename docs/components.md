@@ -42,3 +42,13 @@ Here's a breakdown of what the component does:
 - It also defines a `styles` object that contains styles for the container and the cards.
 
 In summary, this component displays a stack of cards that can be swiped left or right, and it shows a toast message depending on the direction of the swipe.
+
+## SearchBarStatic
+
+The `SearchComponent` maintains two pieces of state: `searchQuery` and `results`. `searchQuery` is the current text in the search bar, and `results` is an array of search results.
+
+The `onChangeSearch` function is called whenever the text in the search bar changes. It updates `searchQuery` with the new text. If the new text is an empty string, it clears the search results. Otherwise, it filters the `places` array to include only places that contain the new text, takes the first 5 results, and sets `results` to these new results.
+
+The `SearchComponent` renders a `Searchbar` and a list of search results. The `Searchbar`'s `onChangeText` prop is set to `onChangeSearch`, so `onChangeSearch` is called whenever the text in the search bar changes. The `value` prop is set to `searchQuery`, so the text in the search bar reflects the current search query.
+
+The search results are rendered as `List.Item` components. Each `List.Item` displays a search result and logs the result to the console when pressed.
